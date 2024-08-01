@@ -1,0 +1,10 @@
+.venv/
+.vscode/
+data/
+prompt/
+env/
+volumes/
+
+embedEtcd.yaml
+user.yaml
+*.pyc
