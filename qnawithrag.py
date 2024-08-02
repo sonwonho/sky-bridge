@@ -13,7 +13,7 @@ class QnARag:
     def __init__(self):
         self.system_prompt = open_prompt("prompt/rag_system.txt")
         self.embeding = ClovaEmbedding()
-        self.completion_executor = CompletionExecutor()
+        self.completion_executor = CompletionExecutor(is_dash=False)
         self.request_data = dict(RAG_PROMPT_CONFIG)
         self.vector_db = self._get_db()
 
@@ -64,5 +64,9 @@ class QnARag:
 
 
 if __name__ == "__main__":
+    import time
+
     r = QnARag()
+    start_t = time.time()
     print("".join(r.rag("정승제 강사님 어때?")))
+    print(time.time() - start_t)
