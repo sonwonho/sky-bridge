@@ -12,7 +12,7 @@ class CompletionExecutor:
             self._api_key = HCX_DASH_CONFIG["API_KEY"]
             self._api_key_primary_val = HCX_DASH_CONFIG["API_KEY_PRIMARY_VAL"]
             self._request_id = HCX_DASH_CONFIG["ID"]
-            self._model_url = "/testapp/v1/chat-completions/HCX-DASH-001"
+            self._model_url = "/serviceapp/v1/chat-completions/HCX-DASH-001"
         else:
             self._host = HCX_CONFIG["HOST"]
             self._api_key = HCX_CONFIG["API_KEY"]

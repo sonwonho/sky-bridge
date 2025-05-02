@@ -9,7 +9,7 @@ class Gooroom:
     def __init__(self):
         self.system_prompt = open_prompt("prompt/gooroom_system.txt")
         self.user_prompt = open_prompt("prompt/gooroom_user.txt")
-        self.completion_executor = CompletionExecutor(is_dash=False)
+        self.completion_executor = CompletionExecutor(is_dash=True)
         self.request_data = dict(GOOROOM_PROMPT_CONFIG)
 
     def ask_schedule(self, year, subject, grade, university):

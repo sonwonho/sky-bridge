@@ -13,7 +13,7 @@ class QnARag:
     def __init__(self):
         self.system_prompt = open_prompt("prompt/rag_system.txt")
         self.embeding = ClovaEmbedding()
-        self.completion_executor = CompletionExecutor(is_dash=False)
+        self.completion_executor = CompletionExecutor(is_dash=True)
         self.request_data = dict(RAG_PROMPT_CONFIG)
         self.vector_db = self._get_db()
 
@@ -53,8 +53,7 @@ class QnARag:
                 }
             )
         preset_texts.append({"role": "user", "content": realquery})
-        with open("test.txt", "w") as t:
-            t.write(str(preset_texts))
+
         request_data = self.request_data.copy()
         request_data["messages"] = preset_texts
 
@@ -68,5 +67,5 @@ if __name__ == "__main__":
 
     r = QnARag()
     start_t = time.time()
-    print("".join(r.rag("정승제 강사님 어때?")))
+    print("".join(r.rag("정승제 VS 현우진 누구 강의가 더 좋아?")))
     print(time.time() - start_t)

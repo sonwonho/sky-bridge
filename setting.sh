@@ -17,4 +17,4 @@ pip3.12 install -r requirements.txt
 apt install libglu1-mesa-dev -y
 tar -xvf venv.tar
 bash utils/standalone_embed.sh start
-# python3.12 input_milvus.py
+python3.12 input_milvus.py
